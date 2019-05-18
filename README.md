@@ -65,7 +65,7 @@ MERN full stack app using React express and Google Civic info API.
 ![Candidate Results](templates/images/candidate-results-page.png)
 
 ## Election Results Page
-![Election Results](template/images/election-results-page.png)
+![Election Results](templates/images/election-results-page.png)
 
 
 
