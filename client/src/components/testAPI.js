@@ -1,30 +1,33 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
 
 function testAPI() {
 
-    // const headers = {
-    //     Accept: "application/json"
-    // }
+    useEffect(() => {
+        fetchOpenSecrets();
+        fetchVoteSmart();
+    }, []);
 
-    axios.get('https://www.opensecrets.org/api/?method=candContrib&cid=N00007360&cycle=2018&apikey=8a3d5344def45691a3e97161157257f6&output=json')
-        .then(function(response) {
-            console.log(response);
-             
-    });
+    const fetchOpenSecrets = async () => {
+        const secrets = await fetch('https://www.opensecrets.org/api/?method=candContrib&cid=N00007360&cycle=2018&apikey=8a3d5344def45691a3e97161157257f6&output=json');
 
-    axios.get('https://api.votesmart.org/CandidateBio.getBio?key=46edbc4757a5641997797349fe5cec1f&candidateId=9490&o=JSON')
-        .then(function(response){
-            console.log(response);
-        })
+        const secretsInfo = await secrets.json();
+
+        console.log(secretsInfo);
+        
+    }
+
+    const fetchVoteSmart = async () => {
+        const voteSmart = await fetch('https://api.votesmart.org/CandidateBio.getBio?key=46edbc4757a5641997797349fe5cec1f&candidateId=9490&o=JSON');
+
+        const voteSmartInfo = await voteSmart.json();
+        console.log(voteSmartInfo);
+    }
 
     return (
         <div>
-            <h1>test api</h1>
-            <div></div>
+            test
         </div>
     );
 }
 
 export default testAPI;
-
