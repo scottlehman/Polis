@@ -11,6 +11,9 @@ function Navbar() {
             <Link to="/about">
                 <li>About</li>
             </Link>
+            <Link to="/contact">
+                <li>Contact</li>
+            </Link>
             <Link to="/signin">
                 <li>Sign in</li>
             </Link>
