@@ -14,7 +14,7 @@ const formValid = ({ formErrors, ...rest }) => {
 
   // validate the form was filled out
   Object.values(rest).forEach(val => {
-    val === null && (valid = false);
+    val === "" && (valid = false);
   });
 
   return valid;
@@ -25,9 +25,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      firstName: null,
-      email: null,
-      password: null,
+      firstName: "",
+      email: "",
+      password: "",
       formErrors: {
         firstName: "",
         email: "",
@@ -68,7 +68,7 @@ class App extends Component {
         break;
       case "password":
         formErrors.password =
-          value.length < 6 ? "minimum 6 characaters required" : "";
+          value.length < 8 ? "Minimum 8 characaters required" : "";
         break;
       default:
         break;
