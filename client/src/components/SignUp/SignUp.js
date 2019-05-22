@@ -84,7 +84,7 @@ class SignUp extends Component {
       <div className="wrapper">
         <div className="form-wrapper">
           <h1>Create Account</h1>
-          <form onSubmit={this.handleSubmit} noValidate>
+          <form onSubmit={this.handleSubmit} action="http://localhost:" method="POST" noValidate>
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>
               <input
