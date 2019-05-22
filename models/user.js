@@ -1,28 +1,34 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.schema;
+const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    firstName = {
+const UserSchema = new Schema({
+    firstName: {
         type: String,
+        trim: true,
         required: true,
         min: [3, "Minimun of 3 characters required"],
-        max: 20,
-        trim: true
+        max: 20
     },
-    email = {
+    email: {
         type: String,
+        trim: true,
         required: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
+        unique: true,
         min: 7,
         max: 50,
-        trim: true
     },
-    password = {
+    password: {
         type: String,
+        trim: true,
         required: true,
-        min: [8, "Minimum 8 characters required"],
-        trim: true
+        validate: [
+            function(input) {
+              return input.length >= 8;
+            },
+            "Password should be a minimum of 8 characters."
+            ]
     },
     date: {
         type: Date,
@@ -30,7 +36,7 @@ const userSchema = new Schema({
     },
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", UserSchema);
 
 // Export the Example model
 module.exports = User;
