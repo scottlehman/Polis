@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const mongoose = require("mongoose");
 const PORT = process.env.PORT || 8000;
 const app = express();
 
@@ -7,7 +8,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.use('/user', require("./routes/User"));
+//User model for page routing
+const User = require("./models/user.js");
+const controllers = require("./controllers/User.js")
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -15,6 +18,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+
+
 
 // Send every other request to the React app
 // Define any API routes before this runs
