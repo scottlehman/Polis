@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -30,11 +30,17 @@ const UserSchema = new Schema({
             "Password should be a minimum of 8 characters."
             ]
     },
-    date: {
+    isDeleted: {
+        type: Boolean,
+        default: false
+    },
+    SignUpDate: {
         type: Date,
         default: Date.now
     },
 });
+
+UserSchema.pre("")
 
 const User = mongoose.model("User", UserSchema);
 
