@@ -19,11 +19,16 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.8.2",
+    "@fortawesome/free-regular-svg-icons": "^5.8.2",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "express": "^4.17.0",
     "express-promise-router": "^3.0.3",
     "if-env": "^1.0.4",
     "joi": "^14.3.1",
     "mongoose": "^5.5.10",
+    "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0"
   }
 }

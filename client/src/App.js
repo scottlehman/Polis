@@ -4,11 +4,16 @@ import Navbar from './components/Navbar/Navbar';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact'
 import Landing from './components/Landing/Landing';
+import Footer from "./components/Footer/Footer";
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import testAPI from './components/testAPI/testAPI';
 
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// importing necessary pieces to use font awesome icons
+
+
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -23,9 +28,9 @@ function App() {
           <Route path="/signin" component={SignIn} />
           <Route path="/testapi" component={testAPI} />
         </Switch>
+        <Footer />
       </div>
-    </Router>
-   
+    </Router>    
   );
 }
 

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="container navigation">
+        <img className="flag-logo" src="../public/images/flag-image.png" alt="flag image"/>
         <ul className="nav-links">
             <Link to="/">
-                <li>Home</li>
+                <li className="home">Home</li>
             </Link>
             <Link to="/about">
                 <li>About</li>
@@ -21,6 +23,7 @@ function Navbar() {
                 <li>Sign up</li>
             </Link>
         </ul>
+        <img className="flag-logo" src="../public/images/flag-image.png" alt="flag image"/>
     </nav>
   );
 }

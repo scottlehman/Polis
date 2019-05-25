@@ -41,32 +41,32 @@ MERN full stack app using React express and Google Civic info API.
 
 # Trello Project Management Board
 
-![Trello Project Board](templates/images/trello-screenshot)
+![Trello Project Board](clients/images/trello-screenshot)
 
 [Trello Project Link](https://trello.com/b/1fDKIS8D/polis-project)
 
 # UX/UI Mockups with Balsamic
 
 ## Landing Page
-![Landing Page](templates/images/polis-landing-page.png)
+![Landing Page](clients/images/polis-landing-page.png)
 
 ## About Page
-![About Page](templates/images/company-about-page.png)
+![About Page](client/images/company-about-page.png)
 
 ## Contact Page
 ![Contact Page](templates/images/company-contact-page.png)
 
 ## Candidate Search Page
-![Candidate Search](templates/images/candidate-search-page.png)
+![Candidate Search](client/images/candidate-search-page.png)
 
 ## Election Search Page
-![Election Search](templates/images/election-search-page.png)
+![Election Search](client/images/election-search-page.png)
 
 ## Candidate Results Page
-![Candidate Results](templates/images/candidate-results-page.png)
+![Candidate Results](client/images/candidate-results-page.png)
 
 ## Election Results Page
-![Election Results](templates/images/election-results-page.png)
+![Election Results](client/images/election-results-page.png)
 
 
 
