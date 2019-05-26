@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -8,12 +7,7 @@ import Landing from './components/Landing';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import testAPI from './components/testAPI';
-
-
-// importing necessary pieces to use font awesome icons
-
-
-
+import Footer from "./components/Footer"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {

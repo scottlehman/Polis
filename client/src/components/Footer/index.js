@@ -1,6 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
-//font awesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook} from "@fortawesome/free-brands-svg-icons";
 import { faInstagram} from "@fortawesome/free-brands-svg-icons";
