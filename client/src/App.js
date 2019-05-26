@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './App.css';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -8,7 +9,12 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import testAPI from './components/testAPI';
 
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+// importing necessary pieces to use font awesome icons
+
+
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -23,9 +29,9 @@ function App() {
           <Route path="/signin" component={SignIn} />
           <Route path="/testapi" component={testAPI} />
         </Switch>
+        <Footer />
       </div>
-    </Router>
-   
+    </Router>    
   );
 }
 
