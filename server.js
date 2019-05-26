@@ -1,23 +1,24 @@
 const express = require("express");
-const path = require("path");
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 8000;
+const parser = require("body-parser");
+const routes = require("./routes");
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(parser.urlencoded({ extended: false }));
+app.use(parser.json());
 
-//User model for page routing
-const User = require("./models/user.js");
-const controllers = require("./controllers/User.js")
-
-// Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
 // Define API routes here
+app.use('/', routes);
+
+//connect to mlab database
+const CONNECTION_STRING = process.env.MONGODB_URI || "mongodb://localhost:27017/polis";
+mongoose.connect(CONNECTION_STRING, { useNewUrlParser: true });
 
 
 
@@ -27,6 +28,8 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
+process.on('SIGINT', () => {process.exit()});
