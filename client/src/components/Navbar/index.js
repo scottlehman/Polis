@@ -5,7 +5,6 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="container navigation">
-        <img className="flag-logo" src="../public/images/flag-image.png" alt="flag image"/>
         <ul className="nav-links">
             <Link to="/">
                 <li className="home">Home</li>
@@ -23,7 +22,6 @@ function Navbar() {
                 <li>Sign up</li>
             </Link>
         </ul>
-        <img className="flag-logo" src="../public/images/flag-image.png" alt="flag image"/>
     </nav>
   );
 }
