@@ -1,10 +1,11 @@
 import React from "react";
+import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook} from "@fortawesome/free-brands-svg-icons";
-import { faInstagram} from "@fortawesome/free-brands-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faReddit } from "@fortawesome/free-brands-svg-icons";
-import "./Footer.css";
+
 
 
 

@@ -7,13 +7,15 @@ function CandidateSearch() {
     return (
 
       <div>
-        //div here for instructions to user
+        {/* //div here for instructions to user */}
         <div className="candidate-search">
             <p>Enter zip code, city or state below to find information of upcoming election in your area</p>
         </div>
-        //search bar for user input
+        {/* //search bar for user input */}
         <input type="text" placeholder="Enter Zip Code, City, or State Here"></input>
-        //submit button for user input
+        {/* //submit button for user input */}
+        <button>Submit</button>
+
 
       </div>
     );
