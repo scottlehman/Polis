@@ -1,129 +1,84 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import API from "../../utils/API"
 import "./SignIn.css";
 
-const emailRegex = RegExp(
-  /.+@.+\..+/
-);
-
-const formValid = ({ formErrors, ...rest }) => {
-  let valid = true;
-
-  // validate form errors being empty
-  Object.values(formErrors).forEach(val => {
-    val.length > 0 && (valid = false);
-  });
-
-  // validate the form was filled out
-  Object.values(rest).forEach(val => {
-    val === "" && (valid = false);
-  });
-
-  return valid;
-};
-
 class SignIn extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    firstName: "",
+    email: "",
+    password: "",
+  }
+  
+  handleInputChange = event => {
 
-    this.state = {
-      firstName: "",
-      email: "",
-      password: "",
-      formErrors: {
-        firstName: "",
-        email: "",
-        password: ""
-      }
-    };
+    const {name, value} = event.target; 
+
+    this.setState({ [name]: value });
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleSubmit = event => {
+    event.preventDefault();
 
-    if (formValid(this.state)) {
-      console.log(`
-        --SUBMITTING--
-        First Name: ${this.state.firstName}
-        Email: ${this.state.email}
-        Password: ${this.state.password}
-      `);
-    } else {
-      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+    console.log(this.state);
+    // console.log(newUser);
+
+    if (this.state.firstName && this.state.email && this.state.password) {
+      API.signIn(this.state)
+        .then(res => {
+          console.log(res.data);
+          this.setState({
+            redirectTo: "/dashboard"
+          })
+        })
+        .catch(err => console.log(err));
     }
-  };
-
-  handleChange = e => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    let formErrors = { ...this.state.formErrors };
-
-    switch (name) {
-      case "firstName":
-        formErrors.firstName =
-          value.length < 3 ? "minimum 3 characaters required" : "";
-        break;
-      case "email":
-        formErrors.email = emailRegex.test(value)
-          ? ""
-          : "invalid email address";
-        break;
-      case "password":
-        formErrors.password =
-          value.length < 8 ? "Minimum 8 characaters required" : "";
-        break;
-      default:
-        break;
-    }
-
-    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
-  };
+  }
 
   render() {
-    const { formErrors } = this.state;
 
     return (
-      <div className="wrapper container text-center">
+      <div className="container">
         <div className="form-wrapper">
-          <h1 className="sign-header">Sign In</h1>
-          <form onSubmit={this.handleSubmit} action="http://localhost:" method="POST" noValidate>
-            <div className="email">
-              <label htmlFor="email">Email: </label>
+          <h1>Sign in</h1>
+          <form>
+           
+            <div className="firstName">
+              <label htmlFor="firstName">First Name</label>
               <input
-                className={formErrors.email.length > 0 ? "error" : null}
-                placeholder="Enter Your Email"
+                value={this.state.firstName}
+                type="text"
+                name="firstName"
+                placeholder="First name"
+                onChange={this.handleInputChange}
+              />           
+            </div>
+
+            <div className="email">
+              <label htmlFor="email">Email</label>
+              <input
+                value={this.state.email}
                 type="email"
                 name="email"
-                noValidate
-                onChange={this.handleChange}
+                placeholder="Email"
+                onChange={this.handleInputChange}
               />
-              {formErrors.email.length > 0 && (
-                <span className="errorMessage">{formErrors.email}</span>
-              )}
+              
             </div>
+
             <div className="password">
-              <label htmlFor="password">Password:</label>
+              <label htmlFor="password">Password</label>
               <input
-                className={formErrors.password.length > 0 ? "error" : null}
-                placeholder="Enter Your Password"
+                value={this.state.password}
                 type="password"
                 name="password"
-                noValidate
-                onChange={this.handleChange}
+                placeholder="Password"
+                onChange={this.handleInputChange}
               />
-              {formErrors.password.length > 0 && (
-                <span className="errorMessage">{formErrors.password}</span>
-              )}
             </div>
-            <div className="signIn">
-              <button type="submit" class="btn-primary">Sign In</button>
-            </div>
-            <div className="newsletter">
-                <input type="checkbox"></input>
-                <span>Subscribe To Our Newsletter!</span>
-            </div>
-            <div className="remember-info">
-                <input type="checkbox"></input>
-                <span>Remember My Info</span>
+            <div className="createAccount">
+            <button onClick={this.handleSubmit}>Create Account</button>
+              <small>Don't have an account? <Link to="/signup">Sign up.</Link></small>
             </div>
           </form>
         </div>
