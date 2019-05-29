@@ -1,9 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const parser = require("body-parser");
-const routes = require("./routes");
+const userRoutes = require("./routes/userRoutes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const path = require("path");
 
 // Define middleware here
 app.use(parser.urlencoded({ extended: false }));
@@ -14,12 +15,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.use('/', routes);
+app.use('/api/users', userRoutes);
 
 //connect to mlab database
 const CONNECTION_STRING = process.env.MONGODB_URI || "mongodb://localhost:27017/polis";
 mongoose.connect(CONNECTION_STRING, { useNewUrlParser: true });
-
 
 
 // Send every other request to the React app
