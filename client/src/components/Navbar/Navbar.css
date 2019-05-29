@@ -1,3 +1,51 @@
-.nav-links {
-    color: red;
+nav {
+    background: url(https://i.imgur.com/8UvEhAq.jpg);
+    background-size: cover;
+    background-position-y: 170%;
+    height: 30vh;
 }
+
+ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+.nav-1 {
+  margin: 0 auto;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-top: 3%;
+}
+
+.nav-1 li {
+    padding-right: 30px;
+    color: #BF0A30;
+}
+
+.nav-1 li:hover {
+    color: white;
+}
+
+.home, .about, .contact, .sign-in, .sign-up {
+    font-size: 22px;
+    
+}
+
+.darken {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(https://i.imgur.com/8UvEhAq.jpg);
+  }
+
+
+
+
+
+
+
+
+

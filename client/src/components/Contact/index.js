@@ -34,7 +34,7 @@ function Contact() {
           
         </form>
       </div>
-    </div>
+    </div> // END OF CONTACT DIV
   );
 }
 

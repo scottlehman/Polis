@@ -15,8 +15,6 @@ function CandidateSearch() {
         <input type="text" placeholder="Enter Zip Code, City, or State Here"></input>
         {/* //submit button for user input */}
         <button>Submit</button>
-
-
       </div>
     );
 }

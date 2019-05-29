@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import Logo from "./components/Logo";
 import About from './components/About';
 import Contact from './components/Contact'
 import Landing from './components/Landing';
