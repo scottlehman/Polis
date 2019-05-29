@@ -23,9 +23,12 @@ class SignUp extends Component {
     // console.log(newUser);
 
     if (this.state.firstName && this.state.email && this.state.password) {
-      API.saveUser(this.state)
+      API.signUp(this.state)
         .then(res => {
           console.log(res.data);
+          this.setState({
+            redirectTo: "/signup"
+          })
         })
         .catch(err => console.log(err));
     }
