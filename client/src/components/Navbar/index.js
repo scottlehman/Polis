@@ -16,26 +16,26 @@ import { faPhoneSquare } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
   return (
-    <nav className="navigation darken">
-        <Logo />
-        <ul className="nav-links nav-1">
-            <Link to="/">
-                <li class="home"><a>Home</a></li>
-            </Link>
-            <Link to="/signin">
-            <li class="sign-in"><a>Sign In</a></li>
-            </Link>
-            <Link to="/signup">
-            <li class="sign-up"><a>Sign Up</a></li>
-            </Link>
-            <Link to="/about">
-            <li class="about"><a>About Us</a></li>
-            </Link>
-            <Link to="/contact">
-            <li class="contact"><a>Contact</a></li>
-            </Link>
-        </ul>
-    </nav>
+      <nav className="navigation darken">
+          <Logo />
+          <ul className="nav-links nav-1">
+              <Link to="/">
+                  <li className="home">Home</li>
+              </Link>
+              <Link to="/signin">
+              <li className="sign-in">Sign In</li>
+              </Link>
+              <Link to="/signup">
+              <li className="sign-up">Sign Up</li>
+              </Link>
+              <Link to="/about">
+              <li className="about">About Us</li>
+              </Link>
+              <Link to="/contact">
+              <li className="contact">Contact</li>
+              </Link>
+          </ul>
+      </nav>
   );
 }
 
