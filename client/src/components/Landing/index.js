@@ -7,7 +7,7 @@ function Landing() {
   return (
     <div className="App container text-center">
       <div className="main-content">
-        <h1>Polis</h1>
+        <h1 className="title">Polis</h1>
         <h2>Uniting People & Politics</h2>
         <div className="btn-selection">
           <Link to="/candidatesearch"> 

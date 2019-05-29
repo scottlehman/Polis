@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./SignIn.css";
 
 const emailRegex = RegExp(
   /.+@.+\..+/
@@ -81,15 +82,15 @@ class SignIn extends Component {
     const { formErrors } = this.state;
 
     return (
-      <div className="wrapper">
+      <div className="wrapper container text-center">
         <div className="form-wrapper">
-          <h1>Sign in</h1>
+          <h1 className="sign-header">Sign In</h1>
           <form onSubmit={this.handleSubmit} action="http://localhost:" method="POST" noValidate>
             <div className="email">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email: </label>
               <input
                 className={formErrors.email.length > 0 ? "error" : null}
-                placeholder="Email"
+                placeholder="Enter Your Email"
                 type="email"
                 name="email"
                 noValidate
@@ -100,10 +101,10 @@ class SignIn extends Component {
               )}
             </div>
             <div className="password">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Password:</label>
               <input
                 className={formErrors.password.length > 0 ? "error" : null}
-                placeholder="Password"
+                placeholder="Enter Your Password"
                 type="password"
                 name="password"
                 noValidate
@@ -114,7 +115,15 @@ class SignIn extends Component {
               )}
             </div>
             <div className="signIn">
-              <button type="submit">Sign In</button>
+              <button type="submit" class="btn-primary">Sign In</button>
+            </div>
+            <div className="newsletter">
+                <input type="checkbox"></input>
+                <span>Subscribe To Our Newsletter!</span>
+            </div>
+            <div className="remember-info">
+                <input type="checkbox"></input>
+                <span>Remember My Info</span>
             </div>
           </form>
         </div>
