@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import API from "../../utils/API"
 
 
@@ -77,7 +78,7 @@ class SignUp extends Component {
             </div>
             <div className="createAccount">
             <button onClick={this.handleSubmit}>Create Account</button>
-              <small>Already Have an Account?</small>
+              <small>Already Have an Account? <Link to="/signin">Sign in.</Link></small>
             </div>
           </form>
         </div>
