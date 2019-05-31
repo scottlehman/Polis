@@ -19,9 +19,10 @@ MERN full stack app using React express and Google Civic info API.
     * API Routing
     * Database Structure and Maintenance
     * Git/SCRUM Master on all commits
-* Mike
     * MVC Structure
     * Backend coding
+* Mike
+    * API information retrieval
     * QA Testing
 ### Timelines
 * Week One
