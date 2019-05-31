@@ -1,7 +1,45 @@
-.form-wrapper {
+/* .form-wrapper {
     margin-top: 8%;
 }
 
 .sign-header {
     margin-bottom: 3%;
 }
+
+.icon-background {
+    display: inline-block;
+    background-color: lightgrey;
+    padding: 5px;
+    border-radius: 10px;
+    line-height: 35px;
+    margin-top: 40px;
+    margin-right: 5px;
+    width: 20%;
+}
+
+ .icon {
+     font-size: 30px;
+     color: black;
+     line-height: 400px;
+     margin-left: -20px;
+ }
+
+ .input-style {
+     display: inline-block;
+     line-height: 30px;
+     /* width: 100%; */
+ /* } */
+
+ /* .sign-in-style {
+     text-transform: capitalize;
+     font-variant: small-caps;
+     font-weight: bold;
+     font-size: 40px;
+ }
+
+ .btn-danger {
+    border-radius: 5px;
+    font-size: 25px;
+    margin-top: 40px;
+ } */
+

@@ -11,10 +11,10 @@ function Landing() {
         <h2>Uniting People & Politics</h2>
         <div className="btn-selection">
           <Link to="/candidatesearch"> 
-              <button className="candidate">Get Candidate Info</button>
+              <button className="candidate">Get National Election Info</button>
           </Link>
           <Link to="/electionsearch">
-              <button className="election">Get Election Info</button>
+              <button className="election">Get State Election Info</button>
           </Link>
         </div> 
       </div>

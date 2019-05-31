@@ -2,7 +2,7 @@ nav {
     background: url(https://i.imgur.com/8UvEhAq.jpg);
     background-size: cover;
     background-position-y: 170%;
-    height: 30vh;
+    height: 32vh;
 }
 
 ul {
@@ -15,12 +15,13 @@ ul {
   text-transform: capitalize;
   font-variant: small-caps;
   font-weight: bold;
-  margin-top: 3%;
+  /* margin-top: 3%; */
 }
 
 .nav-1 li {
     padding-right: 30px;
     color: #BF0A30;
+    padding-top: 100px;;
 }
 
 .nav-1 li:hover {
@@ -28,7 +29,7 @@ ul {
 }
 
 .home, .about, .contact, .sign-in, .sign-up {
-    font-size: 22px;
+    font-size: 25px;
     
 }
 
