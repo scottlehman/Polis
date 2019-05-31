@@ -7,8 +7,8 @@ function ElectionSearch(props) {
     return(
         <form className="search">
             <div>
-                <label for="inputState">State</label>
-                <select id="inputState" value={props.search} class="form-control" onChange={props.handleInputChange}>
+                <label htmlFor="inputState">State</label>
+                <select id="inputState" value={props.search} className="form-control" onChange={props.handleInputChange}>
                 <option selected>Choose...</option>
                     <option>AL</option>
                     <option>AK</option>
