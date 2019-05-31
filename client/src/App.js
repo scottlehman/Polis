@@ -8,7 +8,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import testAPI from './components/testAPI';
 import Footer from "./components/Footer"
-import locallElections from "./pages/localElections";
+import localElections from "./pages/localElections";
 import nationalElections from "./pages/nationalElections";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ function App() {
           <Route path="/signup" component={SignUp} />
           <Route path="/signin" component={SignIn} />
           <Route path="/testapi" component={testAPI} />
-          <Route exact path="/locallelections" component={locallElections} />
+          <Route exact path="/localelections" component={localElections} />
           <Route exact path="/nationalelections" component={nationalElections} />
         </Switch>
         <Footer />
