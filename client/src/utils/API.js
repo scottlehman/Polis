@@ -20,5 +20,8 @@ export default {
   // Saves a user to the database
   signUp: function(userData) {
     return axios.post("/api/users/signup", userData);
+  },
+  stateElections: function(inputState){
+  return axios.post(`https://api.votesmart.org/Election.getElectionByYearState?key=46edbc4757a5641997797349fe5cec1f&year=2019&stateId=${inputState}&o=JSON`)
   }
 };
