@@ -19,12 +19,10 @@ class locallElections extends Component{
         event.preventDefault();
         API.stateElections(this.state.search)
           .then(res => {
-            console.log(res.data)
             if (res.data.status === "error") {
-              throw new Error(res.data.message);
+              throw new Error(res.data);
             }
             this.setState({results: res.data.elections.election, error: "" });
-            console.log(this.state.results)
           })
           .catch(err => this.setState({ error: err.message }));
       };
