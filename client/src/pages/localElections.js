@@ -4,7 +4,7 @@ import ElectionSearch from "../components/ElectionSearch";
 import ElectionResults from "../components/ElectionResults";
 
 
-class locallElections extends Component{
+class localElections extends Component{
     state = {
         search: "",
         election: [],
@@ -45,5 +45,5 @@ class locallElections extends Component{
         );
     }   
 }
-export default locallElections;
+export default localElections;
 
