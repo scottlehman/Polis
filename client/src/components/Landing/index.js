@@ -13,8 +13,8 @@ function Landing() {
           <Link to="/nationalelections"> 
               <button className="candidate">Get Presidental Candidates Info</button>
           </Link>
-          <Link to="/locallelections">
-              <button className="election">Get State Election Info</button>
+          <Link to="/localelections">
+          <button className="election">Get Local Election Info</button>
           </Link>
         </div> 
       </div>

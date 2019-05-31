@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import API from "../../utils/API"
 import "./SignIn.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
+//import react-bootstrap components
+import { InputGroup } from "react-bootstrap";
+
 
 class SignIn extends Component {
   state = {
@@ -38,50 +45,63 @@ class SignIn extends Component {
   render() {
 
     return (
-      <div className="container">
+      <div className="container text-center">
         <div className="form-wrapper">
-          <h1>Sign in</h1>
-          <form>
-           
-            <div className="firstName">
-              <label htmlFor="firstName">First Name</label>
-              <input
+          <h1 className="sign-in-style">Sign In!</h1>
+          {/* START OF FORM */}
+          <form className="text-center container">
+            <InputGroup className="firstName">
+              <label htmlFor="firstName"></label>
+              <InputGroup.Text id="basic-addon1" className="icon-background">
+                  <FontAwesomeIcon icon={ faUser } fixedWidth className="icon"/>  
+              </InputGroup.Text>
+              
+              <input className="input-style"
                 value={this.state.firstName}
                 type="text"
                 name="firstName"
-                placeholder="First name"
+                placeholder="Name"
                 onChange={this.handleInputChange}
               />           
-            </div>
+            </InputGroup>
 
-            <div className="email">
-              <label htmlFor="email">Email</label>
-              <input
+            <InputGroup className="email">
+              <label htmlFor="email"></label>
+            <InputGroup.Text id="basic-addon1" className="icon-background">
+                <FontAwesomeIcon icon={ faEnvelope } fixedWidth className="icon"/>
+             </InputGroup.Text>
+
+              <input className="input-style"
                 value={this.state.email}
                 type="email"
                 name="email"
                 placeholder="Email"
                 onChange={this.handleInputChange}
               />
+            </InputGroup>
+            
+          <InputGroup className="password">
+              <label htmlFor="password"></label>
+            <InputGroup.Text id="basic-addon1" className="icon-background">
+                <FontAwesomeIcon icon={ faLock } fixedWidth className="icon" />
+            </InputGroup.Text>
               
-            </div>
-
-            <div className="password">
-              <label htmlFor="password">Password</label>
-              <input
+              <input className="input-style"
                 value={this.state.password}
                 type="password"
                 name="password"
                 placeholder="Password"
                 onChange={this.handleInputChange}
               />
-            </div>
-            <div className="createAccount">
-            <button onClick={this.handleSubmit}>Create Account</button>
-              <small>Don't have an account? <Link to="/signup">Sign up.</Link></small>
-            </div>
-          </form>
-        </div>
+          </InputGroup> {/* end of password  */}
+
+          <div className="createAccount">
+            <button className="btn-danger" onClick={this.handleSubmit}>Create Account</button>
+            <br />
+            <small>Don't have an account? <Link to="/signup">Sign up.</Link></small>
+          </div>
+        </form>
+      </div>
       </div>
     );
   }
