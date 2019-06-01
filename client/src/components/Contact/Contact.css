@@ -1,0 +1,16 @@
+.full-name, .email, .message, .icon-background {
+    display: inline-block;
+    line-height: 20px;
+}
+
+.input-style {
+    display: inline-block;
+    /* line-height: 40px; */
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+textarea {
+    width: 50%;
+    height: 75px;
+}

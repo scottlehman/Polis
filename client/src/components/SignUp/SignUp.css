@@ -1,4 +1,3 @@
-.firstName {
-    margin: 0 auto;
-    text-align: center;
+.firstName, .email, .password {
+    margin-bottom: 15px;
 }

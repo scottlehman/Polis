@@ -1,0 +1,23 @@
+
+.mission-title {
+    font-family: 'Merriweather', serif;
+    padding-top: 30px;
+}
+
+.about {
+    font-family: 'Merriweather', serif;
+}
+
+.mission-state {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: .2em;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.about-us {
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: .2em;
+    /* margin-top: 25px; */
+    margin-bottom: 30px;
+}

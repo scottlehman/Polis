@@ -8,19 +8,26 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faReddit } from "@fortawesome/free-brands-svg-icons";
 
 
-
-
 function Footer() {
     return(
-        <div className="footer">
-            <ul className="social-icons">
-                <Link to=""><li><FontAwesomeIcon icon={faFacebook} /></li></Link>
-                <Link to=""><li><FontAwesomeIcon icon={faInstagram} /></li></Link>
-                <Link to=""><li><FontAwesomeIcon icon={faTwitter} /></li></Link>
-                <Link to=""><li><FontAwesomeIcon icon={faReddit} /></li></Link>
-            </ul>
-        </div>
-    )
+        <div className="footer sticky">
+                <ul className="social-icons">
+                    <Link to=""><li><FontAwesomeIcon icon={faFacebook} /></li></Link>
+                    <Link to=""><li><FontAwesomeIcon icon={faInstagram} /></li></Link>
+                    <Link to=""><li><FontAwesomeIcon icon={faTwitter} /></li></Link>
+                    <Link to=""><li><FontAwesomeIcon icon={faReddit} /></li></Link>
+                </ul>
+            </div>
+    );
 }
 
 export default Footer;
+
+// function Footer({ children }) {
+//     return (
+//       <div>
+//         <div style={phantomStyle} />
+//         <div style={footerStyle}>{children}</div>
+//       </div>
+//     );
+//   }

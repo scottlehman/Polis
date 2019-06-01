@@ -8,13 +8,13 @@ function Landing() {
     <div className="App container text-center">
       <div className="main-content">
         <h1 className="title">Polis</h1>
-        <h2>Uniting People & Politics</h2>
+        <h2 className="slogan">Uniting People & Politics</h2>
         <div className="btn-selection">
           <Link to="/nationalelections"> 
-              <button className="candidate">Get Presidental Candidates Info</button>
+              <button className="candidate">Presidental Candidates</button>
           </Link>
           <Link to="/localelections">
-          <button className="election">Get Local Election Info</button>
+          <button className="election">Local Election Info</button>
           </Link>
         </div> 
       </div>

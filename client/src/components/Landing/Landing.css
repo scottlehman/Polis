@@ -3,6 +3,11 @@
 }
 
 .title {
+    font-family: 'Merriweather', serif;
+}
+
+.slogan {
+    font-family: 'Dosis', sans-serif;
 }
 
 button {

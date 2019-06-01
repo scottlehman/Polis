@@ -45,11 +45,11 @@ class SignIn extends Component {
   render() {
 
     return (
-      <div className="container text-center">
-        <div className="form-wrapper">
+      <div>
+        <div className="form-wrapper container text-center">
           <h1 className="sign-in-style">Sign In!</h1>
           {/* START OF FORM */}
-          <form className="text-center container">
+          <form className="container">
             <InputGroup className="firstName">
               <label htmlFor="firstName"></label>
               <InputGroup.Text id="basic-addon1" className="icon-background">
