@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-
+import "./Contact.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { InputGroup } from "react-bootstrap"
 
 
 class Contact extends Component {
@@ -10,36 +14,39 @@ class Contact extends Component {
 
   render() {
       return (
-        <div className="contact">
-          <h1>Contact</h1>
+        <div className="contact container text-center">
+          <h1>Contact Us</h1>
           <div className="contact-form">
             {/* Will need to link database if we want to store user's names and passwords */}
             <form action="" method="post">
     
               {/* setup htmlFor first name */}
-              <div>
-                <label htmlFor="first-name">First Name</label>
-                <input type="text" className="first-name" name="firstname" placeholder="Enter Your First Name"></input>
-              </div>
-    
-              {/* setup htmlFor last name */}
-              <div>
-                <label htmlFor="last-name">Last Name</label>
-                <input type="text" className="last-name" name="lastname" placeholder="Enter Your Last Name"></input>
-              </div>
+              <InputGroup className="full-name">
+                <label htmlFor="first-name" className="name-label"></label>
+                <InputGroup.Text id="basic-addon1" className="icon-background">
+                  <FontAwesomeIcon icon={ faUser } fixedWidth className="icon" />
+                </InputGroup.Text>
+                <input type="text" className="input-style" name="firstname" placeholder="Who Are You?"></input>
+              </InputGroup>
             
               {/* setup htmlFor email address */}
-              <div>
-                <label htmlFor="email">Email Address</label>
-                <input type="email" className="email-signup" name="emailaddress" placeholder="Enter Email Address"></input>
-              </div>
+              <InputGroup className="email">
+                <label htmlFor="email"></label>
+                <InputGroup.Text id="basic-addon1" className="icon-background">
+                  <FontAwesomeIcon icon={ faEnvelope } fixedWidth className="icon" />
+                </InputGroup.Text>
+                <input type="email" className="input-style" name="emailaddress" placeholder="example@mail.com"></input>
+              </InputGroup>
             
               {/* setup for user messages  */}
-              <div>
-                <label htmlFor="message">Message:</label>
-                <textarea className="message" name="user-message"></textarea>
-              </div>
-              <button onClick={this.handleSubmit}>Create Account</button>
+              <InputGroup className="message">
+                <label htmlFor="message"></label>
+                {/* <InputGroup.Text id="basic-addon1" className="icon-background">
+                  <FontAwesomeIcon icon={ faCommentAlt } fixedWidth className="icon" />
+                </InputGroup.Text> */}
+                <textarea className="input-style" name="user-message" placeholder="Enter Message Here"></textarea>
+              </InputGroup>
+              <button className="btn-danger" onClick={this.handleSubmit}>Submit</button>
             </form>
           </div>
         </div> // END OF CONTACT DIV

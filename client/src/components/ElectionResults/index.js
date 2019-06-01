@@ -20,8 +20,10 @@ function stageCheck(result){
                 <h4>{result.stage.electionDate}</h4>
             </div>
         )
-    }
+    };
+        
 }
+
 function ElectionResults(props) {
     console.log(props.results)
     if (props.results[0] !== undefined){
@@ -44,6 +46,6 @@ function ElectionResults(props) {
                 <h1>Local elections search results</h1>
                 <h2>{props.results.name}</h2>
             </div>)    
-    }
+    };
 }    
 export default ElectionResults;

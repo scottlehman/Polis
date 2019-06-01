@@ -16,17 +16,18 @@ function App() {
   return (
     <Router>
        <div className="App">
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Landing} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/testapi" component={testAPI} />
-          <Route exact path="/localelections" component={localElections} />
-          <Route exact path="/nationalelections" component={nationalElections} />
-        </Switch>
+         {/* site content wrapper */}
+            <Navbar />
+              <Switch>
+                <Route path="/" exact component={Landing} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/signup" component={SignUp} />
+                <Route path="/signin" component={SignIn} />
+                <Route path="/testapi" component={testAPI} />
+                <Route exact path="/localelections" component={localElections} />
+                <Route exact path="/nationalelections" component={nationalElections} />
+              </Switch>
         <Footer />
       </div>
     </Router>    
