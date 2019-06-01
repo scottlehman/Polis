@@ -1,21 +1,75 @@
 const express = require("express");
-const router = require("express-promise-router")();
-const passport = require("passport");
-const passportConfig = require("../passport");
+const router = express.Router();
+const bcrypt = require('bcryptjs');
+const config = require('config');
+const jwt = require('jsonwebtoken');
+const auth = require('../middleware/auth');
 
-const { validateBody, schemas } = require("../routeHelp/routeHelp");
-const userController = require("../controllers/userController");
-const passportSignIn = passport.authenticate({ session: false });
-const passportJWT = passport.authenticate("jwt", { session:false });
+// User Model
+const User = require('../models/user');
 
+// @route   POST api/users
+// @desc    Auth user
+// @access  Public
+router.post('/signup', (req, res) => {
+  const { firstName, email, password } = req.body;
 
-router.route("/signup")
-  .post(validateBody(schemas.authSchema), userController.signUp);
+    // Simple validation
+    if(!firstName || !email || !password) {
+      return res.status(400).json({ msg: 'Please enter all fields' });
+    }
 
-router.route("/signin")
-  .post(validateBody(schemas.authSchema), passportSignIn, userController.signIn);
+    if(password.length < 8) {
+      return res.status(400).json({ msg: "Password must contain minimum of 8 characters" });
+    }
+  
+    // Check for existing user
+    User.findOne({ email })
+      .then(user => {
+        if(user) return res.status(400).json({ msg: 'User already exists' });
+  
+        const newUser = new User({
+          firstName,
+          email,
+          password
+        });
+  
+        // Create salt & hash
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if(err) throw err;
+            newUser.password = hash;
+            newUser.save()
+              .then(user => {
+                jwt.sign(
+                  { id: user.id },
+                  config.get('jwtSecret'),
+                  { expiresIn: 3600 },
+                  (err, token) => {
+                    if(err) throw err;
+                    res.json({
+                      token,
+                      user: {
+                        id: user.id,
+                        firstName: user.firstName,
+                        email: user.email
+                      }
+                    });
+                  }
+                )
+              });
+          })
+        })
+      })
+  });
 
-router.route("/secret")
-  .get(passportJWT, userController.secret);
+// @route   GET api/auth/user
+// @desc    Get user data
+// @access  Private
+router.get('/', auth, (req, res) => {
+  User.findById(req.user.id)
+    .select('-password')
+    .then(user => res.json(user));
+});
 
 module.exports = router;

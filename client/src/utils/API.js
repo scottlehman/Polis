@@ -23,5 +23,11 @@ export default {
   },
   stateElections: function(inputState){
   return axios.post(`https://api.votesmart.org/Election.getElectionByYearState?key=46edbc4757a5641997797349fe5cec1f&year=2019&stateId=${inputState}&o=JSON`)
-  }
+  },
+  prezElections: function(){
+    return axios.post(`https://api.votesmart.org/Candidates.getByOfficeTypeState?key=46edbc4757a5641997797349fe5cec1f&officeTypeId=P&electionYear=2020&o=JSON`)
+    },
+  candidateBio: function(id1){
+    return axios.post(`https://api.votesmart.org/CandidateBio.getDetailedBio?key=46edbc4757a5641997797349fe5cec1f&candidateId=${id1}&o=JSON`)
+    },
 };
