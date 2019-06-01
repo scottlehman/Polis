@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import Logo from "./components/Logo";
 import About from './components/About';
 import Contact from './components/Contact'
 import Landing from './components/Landing';
@@ -9,6 +8,8 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import testAPI from './components/testAPI';
 import Footer from "./components/Footer"
+import localElections from "./pages/localElections";
+import nationalElections from "./pages/nationalElections";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route path="/signup" component={SignUp} />
           <Route path="/signin" component={SignIn} />
           <Route path="/testapi" component={testAPI} />
+          <Route exact path="/localelections" component={localElections} />
+          <Route exact path="/nationalelections" component={nationalElections} />
         </Switch>
         <Footer />
       </div>

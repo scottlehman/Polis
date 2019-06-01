@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import API from "../../utils/API"
+import "./SignUp.css";
+
+//import font awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
+
+//import react-bootstrap components
+import { InputGroup } from "react-bootstrap";
 
 
 class SignUp extends Component {
@@ -38,24 +48,35 @@ class SignUp extends Component {
   render() {
 
     return (
-      <div className="container">
-        <div className="form-wrapper">
+      // <div className="container text-center">
+        <div className="form-wrapper container text-center">
           <h1>Create Account</h1>
+          {/* START OF FORM */}
           <form>
-           
-            <div className="firstName">
-              <label htmlFor="firstName">First Name</label>
+            {/* NAME INPUT FIELD */}
+            <InputGroup className="firstName">
+              <label htmlFor="firstName"></label>
+              <InputGroup.Text id="basic-addon1" className="icon-background">
+                  <FontAwesomeIcon icon={ faUser } fixedWidth className="icon" />
+              </InputGroup.Text>
+
               <input
                 value={this.state.firstName}
                 type="text"
                 name="firstName"
-                placeholder="First name"
+                placeholder="Name"
                 onChange={this.handleInputChange}
-              />           
-            </div>
+              />         
+            </InputGroup>
 
-            <div className="email">
-              <label htmlFor="email">Email</label>
+            {/* EMAIL INPUT FIELD */}
+
+            <InputGroup className="email">
+              <label htmlFor="email"></label>
+              <InputGroup.Text id="basic-addon1" className="icon-background">
+                  <FontAwesomeIcon icon={ faEnvelope } fixedWidth className="icon" />
+              </InputGroup.Text>
+
               <input
                 value={this.state.email}
                 type="email"
@@ -63,11 +84,16 @@ class SignUp extends Component {
                 placeholder="Email"
                 onChange={this.handleInputChange}
               />
-              
-            </div>
+            </InputGroup>
 
-            <div className="password">
-              <label htmlFor="password">Password</label>
+            {/* PASSWORD INPUT FIELD */}
+
+            <InputGroup className="password">
+              <label htmlFor="password"></label>
+              <InputGroup.Text id="basic-addon1" className="icon-background">
+                  <FontAwesomeIcon icon={ faLock } fixedWidth className="icon" />
+              </InputGroup.Text>
+              
               <input
                 value={this.state.password}
                 type="password"
@@ -75,14 +101,31 @@ class SignUp extends Component {
                 placeholder="Password"
                 onChange={this.handleInputChange}
               />
-            </div>
+            </InputGroup>
+            
+            <InputGroup className="password">
+              <label htmlFor="password"></label>
+              <InputGroup.Text id="basic-addon1" className="icon-background">
+                  <FontAwesomeIcon icon={ faLock } fixedWidth className="icon" />
+              </InputGroup.Text>
+              
+              <input
+                value={this.state.password}
+                type="password"
+                name="password"
+                placeholder="Confirm Password"
+                onChange={this.handleInputChange}
+              />
+              </InputGroup> {/* END OF ICON CONTAINER DIV */}
+
             <div className="createAccount">
-            <button onClick={this.handleSubmit}>Create Account</button>
+            <button className="btn-danger" onClick={this.handleSubmit}>Create Account</button>
+            <br />
               <small>Already Have an Account? <Link to="/signin">Sign in.</Link></small>
             </div>
           </form>
         </div>
-      </div>
+      //deleted div
     );
   }
 }
