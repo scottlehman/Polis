@@ -1,5 +1,5 @@
 # PolisFinalProject
-MERN full stack app using React express and Google Civic info API.
+MERN full stack app using the MERN stack with the Vote-smart and Open Secrects APIs.
 
 # Final Project Overview
 ### Overview of Intended Application
